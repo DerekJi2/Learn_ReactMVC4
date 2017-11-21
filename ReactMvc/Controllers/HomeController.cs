@@ -26,5 +26,12 @@ namespace ReactMvc.Controllers
 
             return View();
         }
+
+        public ActionResult React()
+        {
+            ViewBag.Title = "React: Hello World!";
+
+            return View();
+        }
     }
 }
