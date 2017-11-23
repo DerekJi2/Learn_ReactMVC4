@@ -271,6 +271,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\json\accountJSON.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -330,6 +331,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\React.cshtml" />
     <Content Include="Scripts\ReactTutorial.jsx" />
+    <Content Include="Scripts\TDivData.jsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
