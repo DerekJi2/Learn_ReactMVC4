@@ -16,8 +16,13 @@
         }.bind(this));
     },
 
-    render: function() {
-        return (
+    render: function () {
+        if (this.props.isHtml == "true")
+            return (
+                <div id="dv-account-json" className={this.state.hiddenClass} dangerouslySetInnerHTML={{ __html : this.state.data } }></div>
+            );
+        else
+            return (
             <div id="dv-account-json" className={this.state.hiddenClass}>{this.state.data}</div>
         );
     }
@@ -29,6 +34,6 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <TDivData source="/Home/Index" hidden="false"/>,
+  <TDivData source="/Home/Index" hidden="false" isHtml="true"/>,
   document.getElementById('divdata2')
 );
