@@ -1,6 +1,7 @@
-﻿
-@{
+﻿@{
     Layout = null;
+    bool _DEBUG_ = true;
+    string _TimeStamp = _DEBUG_ ? DateTime.Now.ToString("yyyy-MM-dd HH:ss.fff") : "2017-11-25";
 }
 
 <!DOCTYPE html>
@@ -9,13 +10,37 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>TypeScript App</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-    <script src="~/Scripts/App/app.js"></script>
+    <script src="~/Scripts/App/app.js?v=@_TimeStamp"></script>
     <div id="message"></div>
     <div>
-        Compiler: <input id="compiler" value="TypeScript" onkeyup="document.getElementById('message').innerText = sayHello()" /><br />
-        Framework: <input id="framework" value="ASP.NET" onkeyup="document.getElementById('message').innerText = sayHello()" />
+        Compiler: <input id="compiler" value="TypeScript" onkeyup="_SayHello();" /><br />
+        Framework: <input id="framework" value="ASP.NET" onkeyup="_SayHello();" />
     </div>
+    <div id="greeter"></div>
+    <button class="btn btn-primary" onclick="jsHello(this)">Javascript SET</button>
+    <span> </span>
+    <button class="btn btn-primary" onclick="jQueryHello(this)">jQuery SET</button>
 </body>
 </html>
+
+<script type="text/javascript">
+
+    function jsHello(obj) {
+        var text = $(obj).html();
+        document.getElementById("greeter").innerHTML = text + ": " + greeter_string;
+    }
+
+    function jQueryHello(obj) {
+        var text = $(obj).html();
+        $('#greeter').html(text + ": " + greeter_string);
+    }
+
+    function _SayHello() {
+        document.getElementById('message').innerText = sayHello();
+    }
+</script>
