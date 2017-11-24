@@ -33,5 +33,10 @@ namespace ReactMvc.Controllers
 
             return View();
         }
+
+        public ActionResult TypeScriptApp()
+        {
+            return View();
+        }
     }
 }
