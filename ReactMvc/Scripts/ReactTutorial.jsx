@@ -22,6 +22,7 @@ var CommentBox = React.createClass({
     render: function() {
         return (
           <div className="commentBox">
+            <div contentEditable='true' dangerouslySetInnerHTML={{ __html: this.props.object }}></div>
             <h1>Comments</h1>
             <CommentList />
             <CommentForm />
@@ -30,7 +31,10 @@ var CommentBox = React.createClass({
     }
 });
 
-ReactDOM.render(
-  <CommentBox />,
-  document.getElementById('content')
-);
+function TutorialRender(obj)
+{
+    ReactDOM.render(
+      <CommentBox object={obj}/>,
+      document.getElementById('content')
+    );
+}

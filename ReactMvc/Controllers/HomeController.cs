@@ -31,7 +31,14 @@ namespace ReactMvc.Controllers
         {
             ViewBag.Title = "React: Hello World!";
 
-            return View();
+            var model = new ReactMvc.Models.LoginViewModel()
+            {
+                Email = "derek@mailinator.com",
+                Password = "test",
+                RememberMe = true
+            };
+
+            return View(model);
         }
 
         public ActionResult TypeScriptApp()

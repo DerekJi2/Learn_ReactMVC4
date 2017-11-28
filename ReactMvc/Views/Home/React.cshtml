@@ -1,6 +1,8 @@
 ﻿@{
     Layout = null;
 }
+@using ReactMvc.Models;
+@model LoginViewModel
 <html>
 <head>
     <title>@ViewBag.Title</title>
@@ -25,7 +27,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="@Url.Content("~/Scripts/ReactTutorial.jsx")"></script>
-    <script src="@Url.Content("~/Scripts/TDivData.jsx")"></script>
+    @*<script src="@Url.Content("~/Scripts/TDivData.jsx")"></script>*@
+
+    <h2>Email: @Model.Email</h2>
+    <script>
+        TutorialRender('@Html.TextBoxFor(m => m.Email)');
+    </script>
 </body>
 </html>
 
